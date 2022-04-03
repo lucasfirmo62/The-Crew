@@ -1,0 +1,37 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Professor {
+  id      Int       @id @default(autoincrement()) // Id automático
+  ra      String
+  nome    String
+  email   String
+  Horario Horario[]
+}
+
+model Sala {
+  id        Int       @id @default(autoincrement()) // Id automático
+  id_sala   String // Id fictício
+  descricao String
+  Horario   Horario[]
+}
+
+model Horario {
+  id             Int       @id @default(autoincrement())
+  dia_da_reserva DateTime
+  horario_inicio DateTime
+  horario_final  DateTime
+  professor      Professor @relation(fields: [professorId], references: [id])
+  sala           Sala      @relation(fields: [salaId], references: [id])
+  professorId    Int
+  salaId         Int
+}
