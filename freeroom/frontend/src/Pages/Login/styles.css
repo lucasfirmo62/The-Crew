@@ -56,5 +56,6 @@ button:hover{
   }
   .login-box{
     padding: 10px;
+    min-width: 100px;
   }
 }

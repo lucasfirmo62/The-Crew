@@ -1,0 +1,10 @@
+#rooms-wrapper {
+    width: 100%;
+    height: auto;
+    max-width: 1380px;
+    margin: auto;
+    background-color: rgb(224, 223, 206);
+    padding-top: 20px;
+    padding-right: 500px;
+    padding-left: 500px;
+  }
