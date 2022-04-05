@@ -22,7 +22,7 @@ class SalaController {
         }
     }
 
-    modificaSala = async (req, res) => {
+    modificarSala = async (req, res) => {
         try{
             const message = await salaService.modificaSala(req);
             res.status(201).json(message);
@@ -32,7 +32,7 @@ class SalaController {
         }
     }
 
-    mostrarSala = async (req, res) => {
+    deletarSala = async (req, res) => {
         try{
             const message = await salaService.deletaSala(req);
             res.status(201).json(message);

@@ -1,9 +1,9 @@
-import professorService from "../services/professorService.js"
+import horarioService from "../services/horarioService.js"
 
-class ProfessorController {
-    criarProfessor = async (req, res) => {
+class HorarioController {
+    criarHorario = async (req, res) => {
         try{
-            const message = await professorService.criarProfessor(req);
+            const message = await horarioService.criarHorario(req);
             res.status(201).json(message);
         }
         catch(err){
@@ -12,9 +12,9 @@ class ProfessorController {
         
     }
 
-    mostrarProfessor = async (req, res) => {
+    mostrarHorario = async (req, res) => {
         try{
-            const message = await professorService.mostrarProfessor();
+            const message = await horarioService.mostrarHorario();
             res.status(201).json(message);
         }
         catch(err){
@@ -22,9 +22,9 @@ class ProfessorController {
         }
     }
 
-    modificarProfessor = async (req, res) => {
+    modificarHorario = async (req, res) => {
         try{
-            const message = await professorService.modificaProfessor(req);
+            const message = await horarioService.modificaHorario(req);
             res.status(201).json(message);
         }
         catch(err){
@@ -32,9 +32,9 @@ class ProfessorController {
         }
     }
 
-    deletarProfessor = async (req, res) => {
+    deletarHorario = async (req, res) => {
         try{
-            const message = await professorService.deletaProfessor(req);
+            const message = await horarioService.deletaHorario(req);
             res.status(201).json(message);
         }
         catch(err){
@@ -44,4 +44,4 @@ class ProfessorController {
 }
 
 
-export default new ProfessorController();
+export default new HorarioController();

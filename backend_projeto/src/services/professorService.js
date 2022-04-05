@@ -2,12 +2,12 @@ import Prisma from '@prisma/client'
 const { PrismaClient } = Prisma
 
 class ProfessorService {
-    constructor () {
+    constructor() {
         this.prisma = new PrismaClient();
     }
 
     async criarProfessor(req) {
-        const {ra, nome, email} = req.body
+        const { ra, nome, email } = req.body
         const professor = await this.prisma.Professor.create({
             data: {
                 ra: ra,
@@ -22,29 +22,47 @@ class ProfessorService {
         const professor = await this.prisma.Professor.findMany();
         return professor
     }
-    
-    async modificaProfessor(req){
-        const {ra, nome, email} = req.body
+
+    async adicionarHorario(req) {
+        const { ra, horarioId } = req.body
+        
+        const horario = await this.prisma.Horario.findUnique({
+            where: { id: horarioId },
+        });
+
+        const professor = await this.prisma.Professor.update({
+            where: { //se ra == ra
+                ra: ra,
+            },
+            data: { 
+                Horario: horario,
+            },
+        });
+    }
+
+    async modificaProfessor(req) {
+        const { ra, nome, email } = req.body
+
         const professor = await this.prisma.Professor.update({
             where: { //se ra == ra
                 ra: ra,
             },
             data: { //altera os dados
                 nome: nome,
-                email: email,
+                email: email
             },
         });
         return professor
     }
 
-    async deletaProfessor(id){
+    async deletaProfessor(id) {
         const professor = await this.prisma.Professor.delete({
             where: {
-              id: id,
+                id: id,
             },
         });
         return professor
     }
-} 
+}
 // exportando o objeto dessa classe, instância
 export default new ProfessorService();
