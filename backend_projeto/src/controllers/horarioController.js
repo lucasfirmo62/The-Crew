@@ -1,9 +1,9 @@
-import salaService from "../services/salaService.js"
+import horarioService from "../services/horarioService.js"
 
-class SalaController {
-    criarSala = async (req, res) => {
+class HorarioController {
+    criarHorario = async (req, res) => {
         try{
-            const message = await salaService.criarSala(req);
+            const message = await horarioService.criarHorario(req);
             res.status(201).json(message);
         }
         catch(err){
@@ -12,9 +12,9 @@ class SalaController {
         
     }
 
-    mostrarSala = async (req, res) => {
+    mostrarHorario = async (req, res) => {
         try{
-            const message = await salaService.mostrarSala();
+            const message = await horarioService.mostrarHorario();
             res.status(201).json(message);
         }
         catch(err){
@@ -22,9 +22,9 @@ class SalaController {
         }
     }
 
-    modificarSala = async (req, res) => {
+    modificarHorario = async (req, res) => {
         try{
-            const message = await salaService.modificaSala(req);
+            const message = await horarioService.modificaHorario(req);
             res.status(201).json(message);
         }
         catch(err){
@@ -32,9 +32,9 @@ class SalaController {
         }
     }
 
-    deletarSala = async (req, res) => {
+    deletarHorario = async (req, res) => {
         try{
-            const message = await salaService.deletaSala(req);
+            const message = await horarioService.deletaHorario(req);
             res.status(201).json(message);
         }
         catch(err){
@@ -44,4 +44,4 @@ class SalaController {
 }
 
 
-export default new SalaController();
+export default new HorarioController();

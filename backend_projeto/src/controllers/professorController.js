@@ -1,9 +1,9 @@
-import salaService from "../services/salaService.js"
+import professorService from "../services/professorService.js"
 
-class SalaController {
-    criarSala = async (req, res) => {
+class ProfessorController {
+    criarProfessor = async (req, res) => {
         try{
-            const message = await salaService.criarSala(req);
+            const message = await professorService.criarProfessor(req);
             res.status(201).json(message);
         }
         catch(err){
@@ -12,9 +12,9 @@ class SalaController {
         
     }
 
-    mostrarSala = async (req, res) => {
+    mostrarProfessor = async (req, res) => {
         try{
-            const message = await salaService.mostrarSala();
+            const message = await professorService.mostrarProfessor();
             res.status(201).json(message);
         }
         catch(err){
@@ -22,9 +22,9 @@ class SalaController {
         }
     }
 
-    modificarSala = async (req, res) => {
+    modificarProfessor = async (req, res) => {
         try{
-            const message = await salaService.modificaSala(req);
+            const message = await professorService.modificaProfessor(req);
             res.status(201).json(message);
         }
         catch(err){
@@ -32,9 +32,9 @@ class SalaController {
         }
     }
 
-    deletarSala = async (req, res) => {
+    deletarProfessor = async (req, res) => {
         try{
-            const message = await salaService.deletaSala(req);
+            const message = await professorService.deletaProfessor(req);
             res.status(201).json(message);
         }
         catch(err){
@@ -44,4 +44,4 @@ class SalaController {
 }
 
 
-export default new SalaController();
+export default new ProfessorController();

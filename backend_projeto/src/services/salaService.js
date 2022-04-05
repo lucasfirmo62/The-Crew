@@ -6,8 +6,9 @@ class SalaService {
         this.prisma = new PrismaClient();
     }
 
-    async criarSala(idFake, descricao) {
-        const sala = await prisma.Sala.create({
+    async criarSala(req) {
+        const {idFake, descricao} = req.body
+        const sala = await this.prisma.Sala.create({
             data: {
                 id_sala: idFake,
                 descricao: descricao,
@@ -17,17 +18,27 @@ class SalaService {
     }
 
     async mostrarSala() {
-        const sala = await prisma.Sala.findMany();
+        const sala = await this.prisma.Sala.findMany();
         return sala
     }
     
-    async modificaSala(idFake, descricao){
-        const sala = await prisma.Sala.update({
-            where: { //se id == idFake
-                id: idFake,
+    async modificaSala(req){
+        const {idFake, descricao} = req.body
+        const sala = await this.prisma.Sala.update({
+            where: { //se id_sala == idFake
+                id_sala: idFake,
             },
             data: { //altera descricao somente
                 descricao: descricao,
+            },
+        });
+        return sala
+    }
+
+    async deletaSala(id){
+        const sala = await this.prisma.Sala.delete({
+            where: {
+              id: id,
             },
         });
         return sala
