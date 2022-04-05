@@ -24,7 +24,7 @@ class HorarioController {
 
     modificarHorario = async (req, res) => {
         try{
-            const message = await horarioService.modificaHorario(req);
+            const message = await horarioService.modificarHorario(req);
             res.status(201).json(message);
         }
         catch(err){
@@ -34,7 +34,7 @@ class HorarioController {
 
     deletarHorario = async (req, res) => {
         try{
-            const message = await horarioService.deletaHorario(req);
+            const message = await horarioService.deletarHorario(req);
             res.status(201).json(message);
         }
         catch(err){

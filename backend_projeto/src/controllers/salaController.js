@@ -24,7 +24,7 @@ class SalaController {
 
     modificarSala = async (req, res) => {
         try{
-            const message = await salaService.modificaSala(req);
+            const message = await salaService.modificarSala(req);
             res.status(201).json(message);
         }
         catch(err){
@@ -34,7 +34,7 @@ class SalaController {
 
     deletarSala = async (req, res) => {
         try{
-            const message = await salaService.deletaSala(req);
+            const message = await salaService.deletarSala(req);
             res.status(201).json(message);
         }
         catch(err){

@@ -40,7 +40,7 @@ class ProfessorService {
         });
     }
 
-    async modificaProfessor(req) {
+    async modificarProfessor(req) {
         const { ra, nome, email } = req.body
 
         const professor = await this.prisma.Professor.update({
@@ -55,7 +55,8 @@ class ProfessorService {
         return professor
     }
 
-    async deletaProfessor(id) {
+    async deletarProfessor(req) {
+        const { id } = req.body
         const professor = await this.prisma.Professor.delete({
             where: {
                 id: id,
