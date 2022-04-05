@@ -22,24 +22,27 @@ class SalaService {
         return sala
     }
     
-    async modificaSala(req){
-        const {idFake, descricao} = req.body
+    async modificarSala(req){
+        const {id, idFake, descricao} = req.body
         const sala = await this.prisma.Sala.update({
             where: { //se id_sala == idFake
-                id_sala: idFake,
+                id: id,
             },
             data: { //altera descricao somente
+                id_sala: idFake,
                 descricao: descricao,
             },
         });
         return sala
     }
 
-    async deletaSala(id){
+    async deletarSala(req){
+        const { id } = req.body
         const sala = await this.prisma.Sala.delete({
             where: {
-              id: id,
+                id: id,
             },
+            
         });
         return sala
     }

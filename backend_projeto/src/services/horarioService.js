@@ -37,7 +37,7 @@ class HorarioService {
         return horario
     }
     
-    async modificaHorario(req){
+    async modificarHorario(req){
         const {id, diaReserva, horaI, horaF} = req.body
         const horario = await this.prisma.Horario.update({
             where: { //se ra == ra
@@ -52,7 +52,8 @@ class HorarioService {
         return horario
     }
 
-    async deletaHorario(id){
+    async deletarHorario(req){
+        const { id } = req.body
         const horario = await this.prisma.Horario.delete({
             where: {
               id: id,

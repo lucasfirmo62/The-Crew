@@ -24,7 +24,7 @@ class ProfessorController {
 
     modificarProfessor = async (req, res) => {
         try{
-            const message = await professorService.modificaProfessor(req);
+            const message = await professorService.modificarProfessor(req);
             res.status(201).json(message);
         }
         catch(err){
@@ -34,7 +34,7 @@ class ProfessorController {
 
     deletarProfessor = async (req, res) => {
         try{
-            const message = await professorService.deletaProfessor(req);
+            const message = await professorService.deletarProfessor(req);
             res.status(201).json(message);
         }
         catch(err){
