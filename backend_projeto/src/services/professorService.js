@@ -23,31 +23,32 @@ class ProfessorService {
         return professor
     }
 
-    async adicionarHorario(req) {
-        const { ra, horarioId } = req.body
+    // async adicionarHorario(req) {
+    //     const { ra, horarioId } = req.body
         
-        const horario = await this.prisma.Horario.findUnique({
-            where: { id: horarioId },
-        });
+    //     const horario = await this.prisma.Horario.findUnique({
+    //         where: { id: horarioId },
+    //     });
 
-        const professor = await this.prisma.Professor.update({
-            where: { //se ra == ra
-                ra: ra,
-            },
-            data: { 
-                Horario: horario,
-            },
-        });
-    }
+    //     const professor = await this.prisma.Professor.update({
+    //         where: { //se ra == ra
+    //             ra: ra,
+    //         },
+    //         data: { 
+    //             Horario: horario,
+    //         },
+    //     });
+    // }
 
     async modificarProfessor(req) {
-        const { ra, nome, email } = req.body
+        const { id, ra, nome, email } = req.body
 
         const professor = await this.prisma.Professor.update({
             where: { //se ra == ra
-                ra: ra,
+                id: id,
             },
             data: { //altera os dados
+                ra: ra,
                 nome: nome,
                 email: email
             },
