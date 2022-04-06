@@ -23,14 +23,14 @@ class HorarioService {
         return horario
     }
 
-    async mostrarHorarioPorId(req) {
-        const { id } = req.body;
-        const horario = await this.prisma.Horario.findUnique({
-            where: { id: id },
-        });
+    // async mostrarHorarioPorId(req) {
+    //     const { id } = req.body;
+    //     const horario = await this.prisma.Horario.findUnique({
+    //         where: { id: id },
+    //     });
 
-        return horario;
-    } 
+    //     return horario;
+    // } 
 
     async mostrarHorario() {
         const horario = await this.prisma.Horario.findMany();
