@@ -3,7 +3,7 @@
   height: auto;
   max-width: 1380px;
   margin: auto;
-  background-color: #ffe600;
+  background-color: #f9e14b;
   padding-top: 20px;
   padding-right: 500px;
   padding-left: 500px;
@@ -47,11 +47,14 @@ button{
   margin-top: 10px;
   cursor: pointer;
   border-radius: 39px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 .click{
-  padding-left: 50px;
-  padding-right: 50px;
+  padding-left: 20px;
+  padding-right: 20px;
+  display:flex;
 }
 
 button:hover{
@@ -74,3 +77,11 @@ button:hover{
     min-width: 100px;
   }
 }
+
+.back{
+  position:absolute;
+  margin-left: -30%;
+  width: 50px;
+  height: 50px;
+}
+
