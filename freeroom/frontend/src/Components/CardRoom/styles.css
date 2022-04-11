@@ -1,0 +1,28 @@
+.card-room-content{
+    width: 300px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    background-color: #ffec73;
+}
+
+.title-room{
+    text-align-last: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+}
+
+.staus-room{
+    text-align-last: center;
+    width: 100%;
+    background-color: white;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.description-room{
+    text-align-last: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+}
