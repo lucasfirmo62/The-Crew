@@ -2,6 +2,7 @@
 CREATE TABLE `Professor` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
     `ra` VARCHAR(191) NOT NULL,
+    `senha` VARCHAR(191) NOT NULL,
     `nome` VARCHAR(191) NOT NULL,
     `email` VARCHAR(191) NOT NULL,
 
@@ -20,9 +21,8 @@ CREATE TABLE `Sala` (
 -- CreateTable
 CREATE TABLE `Horario` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
-    `dia_da_reserva` DATETIME(3) NOT NULL,
-    `horario_inicio` DATETIME(3) NOT NULL,
-    `horario_final` DATETIME(3) NOT NULL,
+    `dia_da_semana` VARCHAR(191) NOT NULL,
+    `horario` VARCHAR(191) NOT NULL,
     `professorId` INTEGER NOT NULL,
     `salaId` INTEGER NOT NULL,
 
