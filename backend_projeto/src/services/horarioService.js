@@ -16,7 +16,6 @@ class HorarioService {
                 salaId: salaId
             },
         });
-
         return horario
     }
 
