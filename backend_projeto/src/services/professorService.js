@@ -1,18 +1,20 @@
 import Prisma from '@prisma/client'
 const { PrismaClient } = Prisma
 
+
 class ProfessorService {
     constructor() {
         this.prisma = new PrismaClient();
     }
 
     async criarProfessor(req) {
-        const { ra, nome, email } = req.body
+        const { ra, senha, nome, email } = req.body
         const professor = await this.prisma.Professor.create({
             data: {
                 ra: ra,
+                senha: senha,
                 nome: nome,
-                email: email,
+                email: email
             },
         });
         return professor
@@ -23,25 +25,8 @@ class ProfessorService {
         return professor
     }
 
-    // async adicionarHorario(req) {
-    //     const { ra, horarioId } = req.body
-        
-    //     const horario = await this.prisma.Horario.findUnique({
-    //         where: { id: horarioId },
-    //     });
-
-    //     const professor = await this.prisma.Professor.update({
-    //         where: { //se ra == ra
-    //             ra: ra,
-    //         },
-    //         data: { 
-    //             Horario: horario,
-    //         },
-    //     });
-    // }
-
     async modificarProfessor(req) {
-        const { id, ra, nome, email } = req.body
+        const { id, ra, senha, nome, email } = req.body
 
         const professor = await this.prisma.Professor.update({
             where: { //se ra == ra
@@ -49,6 +34,7 @@ class ProfessorService {
             },
             data: { //altera os dados
                 ra: ra,
+                senha: senha,
                 nome: nome,
                 email: email
             },

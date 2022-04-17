@@ -13,6 +13,7 @@ datasource db {
 model Professor {
   id      Int       @id @default(autoincrement()) // Id automático
   ra      String
+  senha   String
   nome    String
   email   String
   Horario Horario[]
@@ -27,9 +28,8 @@ model Sala {
 
 model Horario {
   id             Int       @id @default(autoincrement())
-  dia_da_reserva DateTime
-  horario_inicio DateTime
-  horario_final  DateTime
+  dia_da_semana  String  //formatacao: seg ter qua qui sex sab dom
+  horario        String  //m1...m6 t1...t6 n1...n6
   professor      Professor @relation(fields: [professorId], references: [id])
   sala           Sala      @relation(fields: [salaId], references: [id])
   professorId    Int
