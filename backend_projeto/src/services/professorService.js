@@ -1,6 +1,9 @@
 import Prisma from '@prisma/client'
 const { PrismaClient } = Prisma
-
+import { API_SECRET } from '../config/constants.js';
+import { AuthException } from '../config/authException.js';
+import bcrypt from 'bcryptjs';
+import jwt from 'jsonwebtoken';
 
 class ProfessorService {
     constructor() {
@@ -9,10 +12,11 @@ class ProfessorService {
 
     async criarProfessor(req) {
         const { ra, senha, nome, email } = req.body
+
         const professor = await this.prisma.Professor.create({
             data: {
                 ra: ra,
-                senha: senha,
+                senha: bcrypt.hashSync(senha, 10),
                 nome: nome,
                 email: email
             },
@@ -51,6 +55,52 @@ class ProfessorService {
         });
         return professor
     }
+    
+    async validarSenha(senha, senhaHash){
+        if (!await bcrypt.compare(senha, senhaHash)) {
+            throw new AuthException(401, "Senha não bate");
+        }
+    }
+
+    async gerarTokenAcesso(req) {
+        const {ra, senha} = req.body 
+
+        try{
+            const professor = await this.prisma.professor.findFirst({
+                where: {
+                    ra: ra,
+                }
+            })
+
+            await this.validarSenha(senha, professor.senha)
+
+            const authProfessor = {
+                id: professor.id,
+                ra: professor.ra, 
+                nome: professor.nome,
+                email: professor.email
+            };
+            
+            const tokenAcesso = jwt.sign(
+                {authProfessor},
+                API_SECRET,
+                {expiresIn: "1d"}
+            );
+            
+            return {
+                usuario: authProfessor,
+                tokenAcesso: tokenAcesso
+            }
+        }
+
+        catch(Erro){
+            return {
+                status: Erro.status,
+                message: Erro.message
+            }
+        }
+    }
 }
+
 // exportando o objeto dessa classe, instância
 export default new ProfessorService();

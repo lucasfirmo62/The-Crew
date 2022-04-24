@@ -16,6 +16,7 @@ router.post('/professor/criar', professorController.criarProfessor);
 router.get('/professor/mostrar', professorController.mostrarProfessor);
 router.patch('/professor/modificar', professorController.modificarProfessor);
 router.delete('/professor/deletar', professorController.deletarProfessor);
+router.post('/professor/autenticar', professorController.gerarTokenAcesso);
 
 // Rotas para Horario
 router.post('/horario/criar', horarioController.criarHorario);
