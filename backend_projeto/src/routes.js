@@ -9,6 +9,8 @@ const router = Router();
 //não utiliza middleware
 router.get('/horario/mostrar', horarioController.mostrarHorario);
 router.get('/sala/mostrar', salaController.mostrarSala);
+router.post('/professor/criar', professorController.criarProfessor);
+router.post('/professor/autenticar', professorController.gerarTokenAcesso);
 
 //utiliza middleware
 router.use(authMiddleware);
@@ -18,11 +20,9 @@ router.patch('/sala/modificar', salaController.modificarSala);
 router.delete('/sala/deletar', salaController.deletarSala);
 
 // Rotas para professor
-router.post('/professor/criar', professorController.criarProfessor);
 router.get('/professor/mostrar', professorController.mostrarProfessor);
 router.patch('/professor/modificar', professorController.modificarProfessor);
 router.delete('/professor/deletar', professorController.deletarProfessor);
-router.post('/professor/autenticar', professorController.gerarTokenAcesso);
 
 // Rotas para Horario
 router.post('/horario/criar', horarioController.criarHorario);
