@@ -44,7 +44,7 @@ class ProfessorController {
 
     gerarTokenAcesso = async (req, res) => { 
         const message = await professorService.gerarTokenAcesso(req);
-        return res.status(message.status).json(message.message);
+        return res.status(message.status).json(message);
     }
 }
 

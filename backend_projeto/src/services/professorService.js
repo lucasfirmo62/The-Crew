@@ -58,7 +58,7 @@ class ProfessorService {
     
     async validarSenha(senha, senhaHash){
         if (!await bcrypt.compare(senha, senhaHash)) {
-            throw new AuthException(401, "Senha não bate");
+            throw new AuthException(401, "Senha não coincide");
         }
     }
 
@@ -88,6 +88,7 @@ class ProfessorService {
             );
             
             return {
+                status: 200,
                 usuario: authProfessor,
                 tokenAcesso: tokenAcesso
             }
