@@ -7,20 +7,39 @@ const Rooms = () => {
 
     const [room, setRooms] = useState([{}]);
 
+
     useEffect(() => {
-        const url = `https://api.npoint.io/e1149d4470d27a417a01`;
+        const url = `http://localhost:3000/sala/mostrar`;
         fetch(url)
           .then(response => response.json())
-          .then(json => json.results)
           .then(async (data) => {
             setRooms(await data);
           })
       }, [])
 
+      var render = room.map((roomSolo, index) => (
+                    <div className="list-item">
+                    <CardRoom
+                        room={roomSolo}
+                    />
+                    </div>
+                ));
+
     function selectBlock(){
         var valueSelect = document.getElementById("select-block").value;
-        alert("Bloco " + valueSelect + " selecionado");
-    }
+        var block = room.id_sala.substr(0, 1);
+        
+        render = (room || []).length ? room.map(roomSolo =>
+            <div className="list-item">
+                {(valueSelect === block) ?
+                    <CardRoom
+                       room={roomSolo}
+                   /> 
+                   :
+                   null
+            }
+            </div>
+            ):null}
 
     return (
         <>
@@ -39,13 +58,7 @@ const Rooms = () => {
 
                 <div className='content-painel'>
                     <center>
-                    {room.map((roomSolo, index) => (
-                        <div className="list-item">
-                        <CardRoom
-                            room={roomSolo}
-                        />
-                        </div>
-                    ))}
+                    {render}
                     </center>
                 </div>
             </div>

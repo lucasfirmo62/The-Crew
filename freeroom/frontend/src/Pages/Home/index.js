@@ -1,7 +1,7 @@
 import React from 'react';
 import './styles.css';
 import UTFPRLOGO from '../../Assets/utfpr-logo.png'
-import { GiTeacher } from 'react-icons/gi';
+import { BiUserCircle } from 'react-icons/bi';
 import { GrView } from 'react-icons/gr';
 import Footer from '../../Components/Footer2'
 
@@ -15,7 +15,7 @@ const Home = () => {
                     <div className='buttons-content'>
                         <a href='/login'>
                             <div className='button'>
-                                <GiTeacher className='icon'/>
+                                <BiUserCircle className='icon'/>
                             </div>
                         </a>
                         <a href='/rooms'>
