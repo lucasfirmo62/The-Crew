@@ -1,6 +1,7 @@
 .card-room-content{
     width: 250px;
     max-width: 100%;
+    width: 300px;
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
     background-color: #ffec73;

@@ -1,0 +1,1 @@
+export const API_SECRET = process.env.API_SECRET || "dGhlY3Jld21hdGhldXNmaXJtb2ZhYnJpY2lvZXJpY2x1Y2NhZ2FicmllbHByb2dyYW1hZG9yZXNjb21hbW9yMTMzNw=="

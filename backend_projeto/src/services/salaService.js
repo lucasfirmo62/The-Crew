@@ -7,10 +7,10 @@ class SalaService {
     }
 
     async criarSala(req) {
-        const {idFake, descricao} = req.body
+        const {idFalso, descricao} = req.body
         const sala = await this.prisma.Sala.create({
             data: {
-                id_sala: idFake,
+                id_sala: idFalso,
                 descricao: descricao,
             },
         });
@@ -23,13 +23,13 @@ class SalaService {
     }
     
     async modificarSala(req){
-        const {id, idFake, descricao} = req.body
+        const {id, idFalso, descricao} = req.body
         const sala = await this.prisma.Sala.update({
-            where: { //se id_sala == idFake
+            where: { //se id_sala == idFalso
                 id: id,
             },
             data: { //altera descricao somente
-                id_sala: idFake,
+                id_sala: idFalso,
                 descricao: descricao,
             },
         });

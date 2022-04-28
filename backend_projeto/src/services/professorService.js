@@ -1,5 +1,9 @@
 import Prisma from '@prisma/client'
 const { PrismaClient } = Prisma
+import { API_SECRET } from '../config/constants.js';
+import { AuthException } from '../config/authException.js';
+import bcrypt from 'bcryptjs';
+import jwt from 'jsonwebtoken';
 
 class ProfessorService {
     constructor() {
@@ -7,12 +11,14 @@ class ProfessorService {
     }
 
     async criarProfessor(req) {
-        const { ra, nome, email } = req.body
+        const { ra, senha, nome, email } = req.body
+
         const professor = await this.prisma.Professor.create({
             data: {
                 ra: ra,
+                senha: bcrypt.hashSync(senha, 10),
                 nome: nome,
-                email: email,
+                email: email
             },
         });
         return professor
@@ -23,25 +29,8 @@ class ProfessorService {
         return professor
     }
 
-    // async adicionarHorario(req) {
-    //     const { ra, horarioId } = req.body
-        
-    //     const horario = await this.prisma.Horario.findUnique({
-    //         where: { id: horarioId },
-    //     });
-
-    //     const professor = await this.prisma.Professor.update({
-    //         where: { //se ra == ra
-    //             ra: ra,
-    //         },
-    //         data: { 
-    //             Horario: horario,
-    //         },
-    //     });
-    // }
-
     async modificarProfessor(req) {
-        const { id, ra, nome, email } = req.body
+        const { id, ra, senha, nome, email } = req.body
 
         const professor = await this.prisma.Professor.update({
             where: { //se ra == ra
@@ -49,6 +38,7 @@ class ProfessorService {
             },
             data: { //altera os dados
                 ra: ra,
+                senha: senha,
                 nome: nome,
                 email: email
             },
@@ -65,6 +55,53 @@ class ProfessorService {
         });
         return professor
     }
+    
+    async validarSenha(senha, senhaHash){
+        if (!await bcrypt.compare(senha, senhaHash)) {
+            throw new AuthException(401, "Senha não coincide");
+        }
+    }
+
+    async gerarTokenAcesso(req) {
+        const {ra, senha} = req.body 
+
+        try{
+            const professor = await this.prisma.professor.findFirst({
+                where: {
+                    ra: ra,
+                }
+            })
+
+            await this.validarSenha(senha, professor.senha)
+
+            const authProfessor = {
+                id: professor.id,
+                ra: professor.ra, 
+                nome: professor.nome,
+                email: professor.email
+            };
+            
+            const tokenAcesso = jwt.sign(
+                {authProfessor},
+                API_SECRET,
+                {expiresIn: "1d"}
+            );
+            
+            return {
+                status: 200,
+                usuario: authProfessor,
+                tokenAcesso: tokenAcesso
+            }
+        }
+
+        catch(Erro){
+            return {
+                status: Erro.status,
+                message: Erro.message
+            }
+        }
+    }
 }
+
 // exportando o objeto dessa classe, instância
 export default new ProfessorService();
