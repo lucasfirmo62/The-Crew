@@ -23,7 +23,27 @@ class HorarioService {
         const horario = await this.prisma.Horario.findMany();
         return horario
     }
+
+    async mostrarHorarioSalas(req){
+        const{tempo, diaReserva} = req.body
+        const horarios = await this.prisma.Horario.findMany({
+            where: {
+                horario: tempo,
+                dia_da_semana: diaReserva
+            },
+        });
+        return horarios
+    }
     
+    // const users = await prisma.user.findMany({
+    //     where: {
+    //       email: {
+    //         endsWith: "prisma.io"
+    //       }
+    //     },
+    //   }
+    
+
     async modificarHorario(req){
         const {id, diaReserva, hora} = req.body
         const horario = await this.prisma.Horario.update({

@@ -7,6 +7,7 @@ import professorController from './controllers/professorController.js';
 const router = Router();
 
 //não utiliza middleware
+router.get('/horario/mostrarHorarioSalas', horarioController.mostrarHorarioSalas);
 router.get('/horario/mostrar', horarioController.mostrarHorario);
 router.get('/sala/mostrar', salaController.mostrarSala);
 router.post('/professor/criar', professorController.criarProfessor);
