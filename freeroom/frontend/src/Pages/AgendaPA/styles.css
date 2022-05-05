@@ -1,0 +1,43 @@
+#home-wrapper-content{
+  width: 100%;
+  height: auto;
+  margin: auto;
+  background-color: #707070;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.buttons-content{
+  display: flex;
+  margin-bottom: 20px;
+  text-align-last: center;
+}
+
+
+.icon{
+  width: 170px;
+  height: 150px;
+  padding: 10px;
+}
+
+.button{
+  padding: 5px;
+  background-color: white;
+  border-radius: 25px;
+  margin:  center;
+  margin-left: 20px;
+  margin-right: 25px;
+  width: 170px;
+}
+
+.button:hover{
+  background-color: #dfdfdf;
+}
+
+nav{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
