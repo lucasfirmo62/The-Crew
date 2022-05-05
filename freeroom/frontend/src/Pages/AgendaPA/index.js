@@ -18,7 +18,7 @@ const Home = () => {
                         <input type="text" placeholder='Horario'></input>
                         <div className='click'>
                             <button type='submit'>SUBMIT</button>
-                            <a href="/">
+                            <a href="/teacher">
                                 <button>VOLTAR</button>
                             </a>
                         </div>
