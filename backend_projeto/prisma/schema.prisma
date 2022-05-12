@@ -17,6 +17,7 @@ model Professor {
   nome    String
   email   String
   Horario Horario[]
+  admin  Boolean    @default(false)
 }
 
 model Sala {

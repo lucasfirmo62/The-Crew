@@ -14,19 +14,20 @@ router.post('/professor/autenticar', professorController.gerarTokenAcesso);
 
 //utiliza middleware
 router.use(authMiddleware);
-// Rotas para sala
-router.post('/sala/criar', salaController.criarSala);
-router.patch('/sala/modificar', salaController.modificarSala);
-router.delete('/sala/deletar', salaController.deletarSala);
-
-// Rotas para professor
-router.get('/professor/mostrar', professorController.mostrarProfessor);
-router.patch('/professor/modificar', professorController.modificarProfessor);
-router.delete('/professor/deletar', professorController.deletarProfessor);
-
 // Rotas para Horario
 router.post('/horario/criar', horarioController.criarHorario);
 router.patch('/horario/modificar', horarioController.modificarHorario);
 router.delete('/horario/deletar', horarioController.deletarHorario);
+
+/*acrecentarmiddleware aqui*/
+// Rotas para sala
+router.post('/sala/criar', salaController.criarSala); //bloquear função para não SU
+router.patch('/sala/modificar', salaController.modificarSala); //bloquear função para não SU
+router.delete('/sala/deletar', salaController.deletarSala); //bloquear função para não SU
+
+// Rotas para professor
+router.get('/professor/mostrar', professorController.mostrarProfessor); //bloquear função para não SU
+router.patch('/professor/modificar', professorController.modificarProfessor); //autorizar somente a si
+router.delete('/professor/deletar', professorController.deletarProfessor);  //bloquear função para não SU
 
 export default router;
