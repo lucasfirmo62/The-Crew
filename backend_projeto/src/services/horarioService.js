@@ -25,24 +25,38 @@ class HorarioService {
     }
 
     async mostrarHorarioSalas(req){
-        const{tempo, diaReserva} = req.body
-        const horarios = await this.prisma.Horario.findMany({
+        const {salaId} = req.body;
+
+        const horario = await this.prisma.Horario.findMany({
             where: {
-                horario: tempo,
-                dia_da_semana: diaReserva
+                sala: {
+                    id: {
+                        equals: salaId,
+                    },
+                },
             },
-        });
-        return horarios
+        })
+
+        return horario
     }
-    
-    // const users = await prisma.user.findMany({
-    //     where: {
-    //       email: {
-    //         endsWith: "prisma.io"
-    //       }
-    //     },
-    //   }
-    
+
+    //mostra a sala por id de horario
+    // async mostrarHorarioSalas(req) {
+    //     const{id} = req.body
+    //     const horario = await this.prisma.Horario.findUnique({
+    //         where: {
+    //             id: id,
+    //         },
+    //     })
+
+    //     const idsala = await this.prisma.Sala.findUnique({
+    //         where: {
+    //             id:  horario.salaId,
+    //         },
+    //     })
+
+    //     return idsala.id_sala
+    // }
 
     async modificarHorario(req){
         const {id, diaReserva, hora} = req.body
