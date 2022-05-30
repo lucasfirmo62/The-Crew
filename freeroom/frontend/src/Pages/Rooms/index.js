@@ -1,10 +1,13 @@
 import React, {useEffect, useState} from 'react';
-import './styles.css';
+import '../../Components/Styles/stylesrooms.css';
+import UTFPRLOGO from '../../Assets/utfpr-logo.png';
 import Footer2 from '../../Components/Footer2'
 import CardRoom from '../../Components/CardRoom';
 
 const Rooms = () => {
 
+
+    
     const [room, setRooms] = useState([{}]);
 
 
@@ -43,26 +46,38 @@ const Rooms = () => {
 
     return (
         <>
-            <div id="rooms-wrapper">
+        <backg>
 
-                <div className='select-content-options-room'>
-                    <center>
-                        <p>Selecione o Bloco</p>
-                        <select id='select-block' className='select-options-rooms' onChange={selectBlock}>
-                            <option value="E">Bloco E</option>
-                            <option value="B">Bloco B</option>
-                            <option value="C">Bloco C</option>
-                        </select>
-                    </center>
-                </div>
+            <div id="rooms-wrapper-content">
+                <logo>
+                    <img className='logo-image' src={UTFPRLOGO} alt=""/>
+                </logo> 
+                <test>
+                    <div className='select-content-options-room'>
+                        <center>
+                            
+                                <div id = "test">
+                                    <p>Selecione o Bloco</p>
+                                </div>
+                            
+                            <select id='select-block' className='select-options-rooms' onChange={selectBlock}>
+                                <option value="E">Bloco E</option>
+                                <option value="B">Bloco B</option>
+                                <option value="C">Bloco C</option>
+                            </select>
+                        
+                        </center>
+                    </div>
 
-                <div className='content-painel'>
-                    <center>
-                    {render}
-                    </center>
-                </div>
+                    <div className='content-painel'>
+                        <center>
+                        {render}
+                        </center>
+                    </div>
+                </test>
             </div>
-            <Footer2/>
+        </backg>
+           
         </>
     )
 }

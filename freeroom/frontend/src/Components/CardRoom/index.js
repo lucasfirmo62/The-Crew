@@ -1,10 +1,14 @@
 import React, {useEffect, useState} from 'react';
 import './styles.css';
+import {GrClose} from 'react-icons/gr';
 
 const CardRoom = ({room}) => {
 
   const [horary, setHorary] = useState([{}]);
   const [tableHorary, setTableHorary] = useState([{}]);
+  const [showResults, setShowResults] = React.useState(false)
+  const onClick = () => setShowResults(true)
+  const exit = () => setShowResults(false)
 
     useEffect(() => {
       const url = `http://localhost:3000/horario/mostrar`;
@@ -60,9 +64,41 @@ const CardRoom = ({room}) => {
       }
   }
 
+  const HoraryRoom = () =>(
+    <div className='content-horary'>
+      <div className='room-table-horary'>
+        <div title='sair' className='exit-toggle'>
+          <GrClose onClick={exit}/>
+        </div>
+        <div className='title-room-horary'>
+          <p>Sala {room.id_sala}</p>
+        </div>
+        <div className='horarys'>
+          {tableHorary.map((roomHorary, index) => (
+            <div className="list-item">
+              <div id = "test">                 
+              <div className='card-room-horary-self'>
+                  <div className='title-room'>
+                    <p>{roomHorary.horario}</p>
+                  </div>
+                  <div className='.staus-room-modal'>
+                    <p>Livre</p>
+                  </div>
+                </div>
+              </div>
+        </div>
+          ))
+        }
+        </div>
+      </div>
+    </div>
+  )
+
   
     return (
-      <div className='card-room-content'>
+      <>
+        { showResults ? <HoraryRoom /> : null }
+      <div onClick={onClick} className='card-room-content'>
         <div className='title-room'>
             <p>Sala {room.id_sala}</p>
         </div>
@@ -73,6 +109,7 @@ const CardRoom = ({room}) => {
             <p>{room.descricao}</p>
         </div>
       </div>
+      </>
     )
   }
   
