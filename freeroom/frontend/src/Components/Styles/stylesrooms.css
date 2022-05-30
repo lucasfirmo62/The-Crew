@@ -1,0 +1,63 @@
+#rooms-wrapper-content {
+  height: 1000px;
+  width: 1850px;
+  margin: auto;
+ /* background-image: url('../../Components/imagens/salas.png');*/
+  background-image: url('../../Components/imagens/e.jpeg');
+  background-size: cover;
+  background-clip: border-box;
+  padding-top: 20px;
+  padding-right: 10%;
+  padding-left: 10%;
+  padding-bottom: 20px;
+}
+
+.select-content-options-room p{
+  padding-top: 90px;
+  padding-bottom: 60px;
+  margin: 10px;
+  font-size: 60px;
+}
+
+
+.select-options-rooms{
+  background-color: white;
+  padding: 7px;
+  font-size: 17px;
+  border-radius: 80px;
+  margin-bottom: 50px;
+}
+
+select{
+  background: white;
+  width: 650px;
+  text-align-last: center;
+  
+}
+
+select option {
+  background: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  text-shadow: 0 1px 0 rgb(241, 3, 3);
+}
+
+.list-item{
+
+  margin: 5px;
+  display: inline-block;
+}
+
+#test{
+
+ /* background-color: rgba(255, 255, 255, 0.351);*/
+ text-shadow: 3px 2px 20px #ffffffe9;
+
+}
+
+
+logo{
+  padding-top: 20px;
+  display: flex;
+  width: 400px;
+  margin:  center;
+}
