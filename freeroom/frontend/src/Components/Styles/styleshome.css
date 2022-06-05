@@ -1,0 +1,65 @@
+#home-wrapper{
+  height: 1000px;
+  width: 1850px;
+  margin: auto;
+  /*background-color: #707070;*/
+  background-image: url('../../Components/imagens/i.jpg');
+  background-size: cover;
+  background-clip: border-box;
+  padding-top: 15px;
+  padding-right: 500px;
+  padding-left: 500px;
+  padding-bottom: 20px;
+}
+
+.buttons-content{
+  display: flex;
+  margin-bottom: 20px;
+  text-align-last: center;
+}
+
+
+.icon{
+  width: 170px;
+  height: 150px;
+  padding: 10px;
+}
+
+.button{
+  padding: 5px;
+  background-color: white;
+  border-radius: 25px;
+  margin:  center;
+  margin-left: 20px;
+  margin-right: 25px;
+  width: 170px;
+  cursor: pointer;
+}
+
+.button:hover{
+  background-color: #dfdfdf;
+}
+
+buton1{
+  margin-left: -100px;
+  margin-right: 500px;
+  width: auto;
+  height: auto;
+}
+
+logo{
+  display: flex;
+  margin:  center;
+}
+
+.select-content-options-room p{
+  padding-top: 90px;
+  padding-bottom: 60px;
+  margin: 10px;
+  font-size: 100px;
+}
+
+#text-1{ 
+  font-size: 200px;  
+
+}

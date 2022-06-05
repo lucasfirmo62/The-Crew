@@ -22,6 +22,16 @@ class HorarioController {
         }
     }
 
+    mostrarHorarioSalas = async (req, res) => {
+        try{
+            const message = await horarioService.mostrarHorarioSalas(req);
+            res.status(200).json(message);
+        }
+        catch(err){
+            res.status(500).json(err.message);
+        }
+    }
+
     modificarHorario = async (req, res) => {
         try{
             const message = await horarioService.modificarHorario(req);

@@ -1,32 +1,28 @@
 import React from 'react';
-import '../../Components/Styles/styleshome.css';
+import '../../Components/Styles/stylesteach.css';
 import UTFPRLOGO from '../../Assets/utfpr-logo.png'
-import { BiUserCircle } from 'react-icons/bi';
+import { AiOutlineClockCircle } from 'react-icons/ai';
 import { GrView } from 'react-icons/gr';
 import Footer from '../../Components/Footer2'
 
 const Home = () => {
     return (
         <>
-            <div id="home-wrapper">
-                <logo>
-                <img className='logo-image' src={UTFPRLOGO} alt=""/>
-                </logo>
-
-                <div id = "text-1">
-                    <p className='title-app'>Mapeamento de Salas do Campus Campo Mourao</p>
-                </div>
-                
+            <div id="home-wrapper-content">
+                    <logo>
+                       <img className='logo-image' src={UTFPRLOGO} alt=""/>
+                    </logo> 
+                <p className='title-app'>Professores</p>
                 <center>
                     <div className='buttons-content'>
-                        <buton1>
-                        <a href='/login'>
+                        <butom1>
+                        <a href='/pa'>
                             <div className='button'>
-                                <BiUserCircle className='icon'/>
-                                <p className='title-app'>Professores</p>
+                                <AiOutlineClockCircle className='icon'/>
+                                <p className='title-app'>Agendar PA</p>
                             </div>
                         </a>
-                        </buton1>
+                        </butom1>
                         <a href='/rooms'>
                             <div className='button'>
                                 <GrView className='icon'/>
@@ -36,7 +32,7 @@ const Home = () => {
                     </div>
                 </center>
             </div>
-            
+            <Footer/>
         </>
     )
 }

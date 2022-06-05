@@ -3,7 +3,7 @@
   height: auto;
   max-width: 1380px;
   margin: auto;
-  background-color: #f9e14b;
+  background-color: #707070;
   padding-top: 20px;
   padding-right: 500px;
   padding-left: 500px;
@@ -85,3 +85,7 @@ button:hover{
   height: 50px;
 }
 
+logo{
+  display: flex;
+  margin:  center;
+}
