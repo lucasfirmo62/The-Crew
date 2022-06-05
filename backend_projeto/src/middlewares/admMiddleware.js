@@ -1,7 +1,7 @@
 import jwt from 'jsonwebtoken';
 import { API_SECRET } from '../config/constants.js'
 
-const authMiddleware = (req, res, next) => {
+const admMiddleware = (req, res, next) => {
     try{
         const { authorization } = req.headers;
         
@@ -24,4 +24,4 @@ const authMiddleware = (req, res, next) => {
     }
 }
 
-export default authMiddleware;
+export default admMiddleware;
