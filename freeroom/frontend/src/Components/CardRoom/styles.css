@@ -1,3 +1,25 @@
+
+.card-room-disponivel{
+    
+    cursor: pointer;
+    
+    width: 250px;
+    top: 300px;
+    left: 800px;
+    max-width: 100%;
+    background-image:
+    linear-gradient(
+      to top, 
+      #ffffff 60%,
+      #91F1E0 30%
+      
+    );
+    border: 2px solid #FFB904;
+    border-radius: 10px;
+
+}
+
+
 .card-room-content{
     
     cursor: pointer;
@@ -110,3 +132,66 @@
 
 
 /* 91F1E0*/
+
+@media only screen and (max-width: 667px){
+
+
+    .room-table-horary{
+
+        left: 100px;
+        width: 350px;
+        height: 400px;
+        background-color: #ffffff;
+        border-radius: 30px;
+    }
+    
+    .horarys{
+        max-height: calc(100vh - 210px);
+        overflow-y: auto;
+        width: auto;
+        height: 350px;
+    }
+
+    .exit-toggle{
+        position: absolute;
+        padding-left: 10px;
+        cursor: pointer;
+    }
+    
+    .title-room-horary{
+        padding: 10px;
+    }
+    
+    .title-room-horary p{
+        font-size: 20px;
+    }
+    
+    .card-room-horary-self{
+        
+        width: 200px;
+        height: 70px;
+        max-width: 100%;
+        background-image:
+        linear-gradient(
+          to top, 
+          #ffffff 60%,
+          #91F1E0 30%
+          
+        );
+        border: 2px solid #040403;
+        border-radius: 10px;
+    
+    }
+    
+    .staus-room-modal{
+        text-align-last: center;
+        padding-bottom: 5px;
+    
+    }
+    
+    #test{
+        padding: 0px;
+    }
+
+  
+}
