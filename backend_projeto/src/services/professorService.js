@@ -55,32 +55,33 @@ class ProfessorService {
         });
         return professor
     }
-    
-    async validarSenha(senha, senhaHash){
+
+    async validarSenha(senha, senhaHash) {
         if (!await bcrypt.compare(senha, senhaHash)) {
             throw new AuthException(401, "Senha não coincide");
         }
     }
 
     async gerarTokenAcesso(req) {
-        const {ra, senha} = req.body 
+        const {email, senha} = req.body 
 
         try{
-            const professor = await this.prisma.professor.findFirst({
+            const professor = await this.prisma.Professor.findFirst({
                 where: {
-                    ra: ra,
+                    email: email,
                 }
             })
-
+            
             await this.validarSenha(senha, professor.senha)
-
+            
             const authProfessor = {
                 id: professor.id,
                 ra: professor.ra, 
                 nome: professor.nome,
-                email: professor.email
-            };
-            
+                email: professor.email,
+                admin: professor.admin
+            }
+
             const tokenAcesso = jwt.sign(
                 {authProfessor},
                 API_SECRET,
