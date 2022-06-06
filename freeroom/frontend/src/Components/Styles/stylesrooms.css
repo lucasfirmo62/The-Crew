@@ -1,0 +1,115 @@
+#rooms-wrapper-content {
+  height: 950px;
+  width: auto;
+  margin: auto;
+ /* background-image: url('../../Components/imagens/salas.png');*/
+  background-image: url('../../Components/imagens/e.jpeg');
+  background-size: cover;
+  background-clip: border-box;
+
+}
+
+.select-content-options-room p{
+  padding-top: 90px;
+  padding-bottom: 60px;
+  margin: 10px;
+  font-size: 60px;
+}
+
+
+
+.select-options-rooms{
+  background-color: white;
+  padding: 7px;
+  font-size: 17px;
+  border-radius: 80px;
+  margin-bottom: 50px;
+}
+
+select{
+  background: white;
+  width: 650px;
+  text-align-last: center;
+  
+}
+
+select option {
+  background: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  text-shadow: 0 1px 0 rgb(241, 3, 3);
+}
+
+.list-item{
+
+  margin: 5px;
+  display: inline-block;
+}
+
+#test{
+
+ /* background-color: rgba(255, 255, 255, 0.351);*/
+ text-shadow: 3px 2px 20px #ffffffe9;
+
+}
+
+
+logo{
+  padding-top: 50px;
+  padding-left: 150px;
+  display: flex;
+  width: 600px;
+  margin:  center;
+}
+
+
+@media only screen and (max-width: 667px){
+  
+  logo{
+    padding-top: 10px;
+    padding-left: 30px;
+    display: flex;
+    width: 500px;
+    margin:  center;
+  }
+
+  .select-content-options-room p{
+    padding-top: 90px;
+    padding-bottom: 60px;
+    margin: 10px;
+    font-size: 40px;
+  }
+
+
+  #test{
+
+    /* background-color: rgba(255, 255, 255, 0.351);*/
+    text-shadow: 3px 2px 20px #ffffffe9;
+    width: 300px;
+    
+   }
+
+  center{
+    width: auto;
+    height: auto;
+  }
+
+  #rooms-wrapper-content {
+    height: 700px;
+    width: auto;
+    margin: auto;
+   /* background-image: url('../../Components/imagens/salas.png');*/
+    background-image: url('../../Components/imagens/e.jpeg');
+    background-size: cover;
+    background-clip: border-box;
+  
+  }
+
+  select{
+    background: white;
+    width: 300px;
+    text-align-last: center;
+    
+  }
+
+
+}

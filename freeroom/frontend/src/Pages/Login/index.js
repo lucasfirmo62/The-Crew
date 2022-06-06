@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles.css';
+import '../../Components/Styles/styleslogin.css';
 import Footer from '../../Components/Footer';
 import UTFPRLOGO from '../../Assets/utfpr-logo.png'
 
@@ -7,7 +7,9 @@ const Login = () => {
     return (
         <>
             <div id="login-wrapper">
-                <a href="/"><img className='logo-image' src={UTFPRLOGO} alt=""/></a>
+                    <logo>
+                       <img className='logo-image' src={UTFPRLOGO} alt=""/>
+                    </logo> 
                 <p className='title-app'>Mapeamento de Salas do Campus Campo Mourao</p>
                 <div className='login-box'>
                     <input type="text" placeholder='RA'></input>
