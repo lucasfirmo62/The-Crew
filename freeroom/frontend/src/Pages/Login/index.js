@@ -13,7 +13,6 @@ const Login = () => {
                 <p className='title-app'>LOGIN PRROFESSORES</p>
                 <div className='login-box'>
                     <input type="text" placeholder='LOGIN'></input>
-                    <input type="password" placeholder='SENHA'></input>
                     <div className='click'>
                         <button type='submit'>ENTRAR</button>
                         <a href="/">

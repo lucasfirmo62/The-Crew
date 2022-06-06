@@ -52,7 +52,7 @@ const Rooms = () => {
 
             
                 <logo>
-                    <img className='logo-image' src={UTFPRLOGO} alt=""/>
+                    <img className='logo' src={UTFPRLOGO} alt=""/>
                 </logo> 
                 <test>
                     <div className='select-content-options-room'>

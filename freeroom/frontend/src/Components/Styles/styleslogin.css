@@ -3,13 +3,17 @@
   height: 1000px;
   margin: auto;
   background-color: #707070;
+  background-size: cover;
+  background-clip: border-box;
   padding-top: 20px;
   padding-right: 500px;
   padding-left: 500px;
 }
 
 .logo-image{
-  width: 200px;
+  
+  padding-right: 100px;
+  width: 600px;
 }
 
 .login-box{
@@ -68,7 +72,6 @@ button:hover{
 
 logo{
   padding-top: 50px;
-  padding-left: 0px;
   display: flex;
   width: 300px;
   margin:  center;
