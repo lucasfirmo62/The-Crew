@@ -45,10 +45,12 @@ const Rooms = () => {
             ):null}
 
     return (
+        
+        <div id="rooms-wrapper-content">
         <>
         <backg>
 
-            <div id="rooms-wrapper-content">
+            
                 <logo>
                     <img className='logo-image' src={UTFPRLOGO} alt=""/>
                 </logo> 
@@ -75,10 +77,11 @@ const Rooms = () => {
                         </center>
                     </div>
                 </test>
-            </div>
+            
         </backg>
            
         </>
+        </div>
     )
 }
 

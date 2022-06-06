@@ -98,6 +98,7 @@ const CardRoom = ({room}) => {
     return (
       <>
         { showResults ? <HoraryRoom /> : null }
+      
       <div onClick={onClick} className='card-room-content'>
         <div className='title-room'>
             <p>Sala {room.id_sala}</p>
