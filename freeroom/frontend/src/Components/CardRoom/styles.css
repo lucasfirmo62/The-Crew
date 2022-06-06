@@ -133,6 +133,644 @@
 
 /* 91F1E0*/
 
+@media only screen and (max-width: 1780px){
+    .room-table-horary{
+
+        left: 90px;
+        width: 1500px;
+        height: 500px;
+        background-color: #ffffff;
+        border-radius: 30px;
+    }
+
+    .exit-toggle{
+        position: absolute;
+        left: 0px;
+        padding-left: 50px;
+        padding-top: 10px;
+        cursor: pointer;
+    }
+    
+    .title-room-horary{
+        padding-top: 20px;
+    }
+    
+    .title-room-horary p{
+        font-size: 20px;
+    }
+    
+    .card-room-horary-self{
+        
+        width: 230px;
+        height: 70px;
+        max-width: 100%;
+        background-image:
+        linear-gradient(
+          to top, 
+          #ffffff 60%,
+          #91F1E0 30%
+          
+        );
+        border: 2px solid #040403;
+        border-radius: 10px;
+    
+    }
+    
+    .staus-room-modal{
+        text-align-last: center;
+        padding-bottom: 5px;
+    
+    }
+    
+    #test{
+        padding-top: 30px;
+        padding-bottom: 20px;
+    }
+    
+
+}
+
+@media only screen and (max-width: 1600px){
+    .room-table-horary{
+
+        left: 180px;
+        width: 1200px;
+        height: 500px;
+        background-color: #ffffff;
+        border-radius: 30px;
+    }
+
+    .exit-toggle{
+        position: absolute;
+        left: 0px;
+        padding-left: 50px;
+        padding-top: 10px;
+        cursor: pointer;
+    }
+    
+    .title-room-horary{
+        padding-top: 20px;
+    }
+    
+    .title-room-horary p{
+        font-size: 20px;
+    }
+    
+    .card-room-horary-self{
+        
+        width: 180px;
+        height: 70px;
+        max-width: 100%;
+        background-image:
+        linear-gradient(
+          to top, 
+          #ffffff 60%,
+          #91F1E0 30%
+          
+        );
+        border: 2px solid #040403;
+        border-radius: 10px;
+    
+    }
+    
+    .staus-room-modal{
+        text-align-last: center;
+        padding-bottom: 5px;
+    
+    }
+    
+    #test{
+        padding-top: 30px;
+        padding-bottom: 20px;
+    }
+    
+
+}
+
+@media only screen and (max-width: 1600px){
+    .room-table-horary{
+
+        left: 100px;
+        width: 1200px;
+        height: 500px;
+        background-color: #ffffff;
+        border-radius: 30px;
+    }
+
+    .exit-toggle{
+        position: absolute;
+        left: 0px;
+        padding-left: 50px;
+        padding-top: 10px;
+        cursor: pointer;
+    }
+    
+    .title-room-horary{
+        padding-top: 20px;
+    }
+    
+    .title-room-horary p{
+        font-size: 20px;
+    }
+    
+    .card-room-horary-self{
+        
+        width: 180px;
+        height: 70px;
+        max-width: 100%;
+        background-image:
+        linear-gradient(
+          to top, 
+          #ffffff 60%,
+          #91F1E0 30%
+          
+        );
+        border: 2px solid #040403;
+        border-radius: 10px;
+    
+    }
+    
+    .staus-room-modal{
+        text-align-last: center;
+        padding-bottom: 5px;
+    
+    }
+    
+    #test{
+        padding-top: 30px;
+        padding-bottom: 20px;
+    }
+    
+
+}
+
+@media only screen and (max-width: 1500px){
+    .room-table-horary{
+
+       
+        left: 400px;
+        width: 700px;
+        height: 500px;
+        background-color: #ffffff;
+        border-radius: 30px;
+    }
+
+    .horarys{
+        max-height: calc(100vh - 210px);
+        overflow-y: auto;
+        width: auto;
+        height: 350px;
+    }
+
+
+    .exit-toggle{
+        position: absolute;
+        left: 0px;
+        padding-left: 50px;
+        padding-top: 10px;
+        cursor: pointer;
+    }
+    
+    .title-room-horary{
+        padding-top: 20px;
+    }
+    
+    .title-room-horary p{
+        font-size: 20px;
+    }
+    
+    .card-room-horary-self{
+        
+        width: 180px;
+        height: 70px;
+        max-width: 100%;
+        background-image:
+        linear-gradient(
+          to top, 
+          #ffffff 60%,
+          #91F1E0 30%
+          
+        );
+        border: 2px solid #040403;
+        border-radius: 10px;
+    
+    }
+    
+    .staus-room-modal{
+        text-align-last: center;
+        padding-bottom: 5px;
+    
+    }
+    
+    #test{
+        padding-top: 30px;
+        padding-bottom: 20px;
+    }
+    
+
+}
+
+@media only screen and (max-width: 1450px){
+    .room-table-horary{
+
+       
+        left: 300px;
+        width: 700px;
+        height: 500px;
+        background-color: #ffffff;
+        border-radius: 30px;
+    }
+
+    .horarys{
+        max-height: calc(100vh - 210px);
+        overflow-y: auto;
+        width: auto;
+        height: 350px;
+    }
+
+
+    .exit-toggle{
+        position: absolute;
+        left: 0px;
+        padding-left: 50px;
+        padding-top: 10px;
+        cursor: pointer;
+    }
+    
+    .title-room-horary{
+        padding-top: 20px;
+    }
+    
+    .title-room-horary p{
+        font-size: 20px;
+    }
+    
+    .card-room-horary-self{
+        
+        width: 180px;
+        height: 70px;
+        max-width: 100%;
+        background-image:
+        linear-gradient(
+          to top, 
+          #ffffff 60%,
+          #91F1E0 30%
+          
+        );
+        border: 2px solid #040403;
+        border-radius: 10px;
+    
+    }
+    
+    .staus-room-modal{
+        text-align-last: center;
+        padding-bottom: 5px;
+    
+    }
+    
+    #test{
+        padding-top: 30px;
+        padding-bottom: 20px;
+    }
+    
+
+}
+
+
+@media only screen and (max-width: 1350px){
+    .room-table-horary{
+
+       
+        left: 250px;
+        width: 700px;
+        height: 500px;
+        background-color: #ffffff;
+        border-radius: 30px;
+    }
+
+    .horarys{
+        max-height: calc(100vh - 210px);
+        overflow-y: auto;
+        width: auto;
+        height: 350px;
+    }
+
+
+    .exit-toggle{
+        position: absolute;
+        left: 0px;
+        padding-left: 50px;
+        padding-top: 10px;
+        cursor: pointer;
+    }
+    
+    .title-room-horary{
+        padding-top: 20px;
+    }
+    
+    .title-room-horary p{
+        font-size: 20px;
+    }
+    
+    .card-room-horary-self{
+        
+        width: 180px;
+        height: 70px;
+        max-width: 100%;
+        background-image:
+        linear-gradient(
+          to top, 
+          #ffffff 60%,
+          #91F1E0 30%
+          
+        );
+        border: 2px solid #040403;
+        border-radius: 10px;
+    
+    }
+    
+    .staus-room-modal{
+        text-align-last: center;
+        padding-bottom: 5px;
+    
+    }
+    
+    #test{
+        padding-top: 30px;
+        padding-bottom: 20px;
+    }
+    
+
+}
+
+
+@media only screen and (max-width: 1350px){
+    .room-table-horary{
+
+       
+        left: 200px;
+        width: 700px;
+        height: 500px;
+        background-color: #ffffff;
+        border-radius: 30px;
+    }
+
+    .horarys{
+        max-height: calc(100vh - 210px);
+        overflow-y: auto;
+        width: auto;
+        height: 350px;
+    }
+
+
+    .exit-toggle{
+        position: absolute;
+        left: 0px;
+        padding-left: 50px;
+        padding-top: 10px;
+        cursor: pointer;
+    }
+    
+    .title-room-horary{
+        padding-top: 20px;
+    }
+    
+    .title-room-horary p{
+        font-size: 20px;
+    }
+    
+    .card-room-horary-self{
+        
+        width: 180px;
+        height: 70px;
+        max-width: 100%;
+        background-image:
+        linear-gradient(
+          to top, 
+          #ffffff 60%,
+          #91F1E0 30%
+          
+        );
+        border: 2px solid #040403;
+        border-radius: 10px;
+    
+    }
+    
+    .staus-room-modal{
+        text-align-last: center;
+        padding-bottom: 5px;
+    
+    }
+    
+    #test{
+        padding-top: 30px;
+        padding-bottom: 20px;
+    }
+    
+
+}
+
+
+@media only screen and (max-width: 1100px){
+    .room-table-horary{
+
+       
+        left: 100px;
+        width: 700px;
+        height: 500px;
+        background-color: #ffffff;
+        border-radius: 30px;
+    }
+
+    .horarys{
+        max-height: calc(100vh - 210px);
+        overflow-y: auto;
+        width: auto;
+        height: 350px;
+    }
+
+
+    .exit-toggle{
+        position: absolute;
+        left: 0px;
+        padding-left: 50px;
+        padding-top: 10px;
+        cursor: pointer;
+    }
+    
+    .title-room-horary{
+        padding-top: 20px;
+    }
+    
+    .title-room-horary p{
+        font-size: 20px;
+    }
+    
+    .card-room-horary-self{
+        
+        width: 180px;
+        height: 70px;
+        max-width: 100%;
+        background-image:
+        linear-gradient(
+          to top, 
+          #ffffff 60%,
+          #91F1E0 30%
+          
+        );
+        border: 2px solid #040403;
+        border-radius: 10px;
+    
+    }
+    
+    .staus-room-modal{
+        text-align-last: center;
+        padding-bottom: 5px;
+    
+    }
+    
+    #test{
+        padding-top: 30px;
+        padding-bottom: 20px;
+    }
+    
+
+}
+
+
+@media only screen and (max-width: 1000px){
+    .room-table-horary{
+
+       
+        left: 180px;
+        width: 500px;
+        height: 500px;
+        background-color: #ffffff;
+        border-radius: 30px;
+    }
+
+    .horarys{
+        max-height: calc(100vh - 210px);
+        overflow-y: auto;
+        width: auto;
+        height: 350px;
+    }
+
+
+    .exit-toggle{
+        position: absolute;
+        left: 0px;
+        padding-left: 50px;
+        padding-top: 10px;
+        cursor: pointer;
+    }
+    
+    .title-room-horary{
+        padding-top: 20px;
+    }
+    
+    .title-room-horary p{
+        font-size: 20px;
+    }
+    
+    .card-room-horary-self{
+        
+        width: 180px;
+        height: 70px;
+        max-width: 100%;
+        background-image:
+        linear-gradient(
+          to top, 
+          #ffffff 60%,
+          #91F1E0 30%
+          
+        );
+        border: 2px solid #040403;
+        border-radius: 10px;
+    
+    }
+    
+    .staus-room-modal{
+        text-align-last: center;
+        padding-bottom: 5px;
+    
+    }
+    
+    #test{
+        padding-top: 30px;
+        padding-bottom: 20px;
+    }
+    
+
+}
+
+@media only screen and (max-width: 800px){
+    .room-table-horary{
+
+       
+        left: 100px;
+        width: 500px;
+        height: 500px;
+        background-color: #ffffff;
+        border-radius: 30px;
+    }
+
+    .horarys{
+        max-height: calc(100vh - 210px);
+        overflow-y: auto;
+        width: auto;
+        height: 350px;
+    }
+
+
+    .exit-toggle{
+        position: absolute;
+        left: 0px;
+        padding-left: 50px;
+        padding-top: 10px;
+        cursor: pointer;
+    }
+    
+    .title-room-horary{
+        padding-top: 20px;
+    }
+    
+    .title-room-horary p{
+        font-size: 20px;
+    }
+    
+    .card-room-horary-self{
+        
+        width: 180px;
+        height: 70px;
+        max-width: 100%;
+        background-image:
+        linear-gradient(
+          to top, 
+          #ffffff 60%,
+          #91F1E0 30%
+          
+        );
+        border: 2px solid #040403;
+        border-radius: 10px;
+    
+    }
+    
+    .staus-room-modal{
+        text-align-last: center;
+        padding-bottom: 5px;
+    
+    }
+    
+    #test{
+        padding-top: 30px;
+        padding-bottom: 20px;
+    }
+    
+
+}
+
+
 @media only screen and (max-width: 667px){
 
 
@@ -159,7 +797,7 @@
     }
     
     .title-room-horary{
-        padding: 10px;
+        padding-top: 10px;
     }
     
     .title-room-horary p{
