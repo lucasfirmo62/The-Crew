@@ -1,32 +1,29 @@
 import { Router } from 'express';
 import authMiddleware from './middlewares/authMiddleware.js'
+import admMiddleware from './middlewares/admMiddleware.js'
 import salaController from './controllers/salaController.js';
 import horarioController from './controllers/horarioController.js';
 import professorController from './controllers/professorController.js';
 
 const router = Router();
 
-//não utiliza middleware
+// Rotas para Horario
+router.post('/horario/criar', authMiddleware, horarioController.criarHorario);
 router.get('/horario/mostrar', horarioController.mostrarHorario);
-router.get('/sala/mostrar', salaController.mostrarSala);
-router.post('/professor/criar', professorController.criarProfessor);
-router.post('/professor/autenticar', professorController.gerarTokenAcesso);
+router.patch('/horario/modificar', authMiddleware, horarioController.modificarHorario);
+router.delete('/horario/deletar', authMiddleware, horarioController.deletarHorario);
 
-//utiliza middleware
-router.use(authMiddleware);
 // Rotas para sala
-router.post('/sala/criar', salaController.criarSala);
-router.patch('/sala/modificar', salaController.modificarSala);
-router.delete('/sala/deletar', salaController.deletarSala);
+router.post('/sala/criar', admMiddleware, salaController.criarSala);
+router.get('/sala/mostrar', salaController.mostrarSala);
+router.patch('/sala/modificar', admMiddleware, salaController.modificarSala);
+router.delete('/sala/deletar', admMiddleware, salaController.deletarSala);
 
 // Rotas para professor
-router.get('/professor/mostrar', professorController.mostrarProfessor);
-router.patch('/professor/modificar', professorController.modificarProfessor);
-router.delete('/professor/deletar', professorController.deletarProfessor);
-
-// Rotas para Horario
-router.post('/horario/criar', horarioController.criarHorario);
-router.patch('/horario/modificar', horarioController.modificarHorario);
-router.delete('/horario/deletar', horarioController.deletarHorario);
+router.post('/professor/criar', professorController.criarProfessor);
+router.get('/professor/mostrar', admMiddleware, professorController.mostrarProfessor);
+router.patch('/professor/modificar', admMiddleware, professorController.modificarProfessor);
+router.delete('/professor/deletar', admMiddleware, professorController.deletarProfessor);
+router.post('/professor/autenticar', professorController.gerarTokenAcesso);
 
 export default router;
