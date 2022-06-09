@@ -1,5 +1,5 @@
 #rooms-wrapper-content {
-  height: 950px;
+  height: 1000px;
   width: auto;
   margin: auto;
  /* background-image: url('../../Components/imagens/salas.png');*/
@@ -14,6 +14,10 @@
   padding-bottom: 60px;
   margin: 10px;
   font-size: 60px;
+}
+
+.logo{
+  width: 600px;
 }
 
 
@@ -62,11 +66,33 @@ logo{
 }
 
 
-@media only screen and (max-width: 667px){
-  
+
+@media only screen and (max-width: 1263px) {
+  .logo-image{
+    width: 600px;
+  }
+
+
   logo{
-    padding-top: 10px;
-    padding-left: 30px;
+    padding-top: 20px;
+    padding-left: 50px;
+    display: flex;
+    margin:  center;
+  }
+
+
+}
+
+@media only screen and (max-width: 667px){
+ 
+  .logo{
+    width: 400px;
+  }
+
+
+  logo{
+    padding-top: 20px;
+    padding-left: 60px;
     display: flex;
     width: 500px;
     margin:  center;
@@ -95,10 +121,10 @@ logo{
 
   #rooms-wrapper-content {
     height: 700px;
+    width: 509px;
     width: auto;
-    margin: auto;
    /* background-image: url('../../Components/imagens/salas.png');*/
-    background-image: url('../../Components/imagens/e.jpeg');
+    background-image: url('../../Components/imagens/e001.jpeg');
     background-size: cover;
     background-clip: border-box;
   
