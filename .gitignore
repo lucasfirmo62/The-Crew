@@ -1,6 +1,7 @@
-node_modulesS
+node_modules
 myapp
-.env
+*.env
 yarn-error.log
-.json
-.icon
+*.json
+*.ico
+
