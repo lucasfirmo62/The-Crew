@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useHistory, useContext } from 'react';
 import '../../Components/Styles/styleslogin.css';
-import Footer from '../../Components/Footer';
+
 import UTFPRLOGO from '../../Assets/utfpr-logo.png'
 import api from '../../api';
 
