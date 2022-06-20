@@ -1,13 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import '../../Components/Styles/stylesrooms.css';
 import UTFPRLOGO from '../../Assets/utfpr-logo.png';
-import Footer2 from '../../Components/Footer2'
 import CardRoom from '../../Components/CardRoom';
 
 const Rooms = () => {
-
-
-    
     const [room, setRooms] = useState([{}]);
 
 
@@ -29,20 +25,9 @@ const Rooms = () => {
                 ));
 
     function selectBlock(){
-        var valueSelect = document.getElementById("select-block").value;
-        var block = room.id_sala.substr(0, 1);
-        
-        render = (room || []).length ? room.map(roomSolo =>
-            <div className="list-item">
-                {(valueSelect === block) ?
-                    <CardRoom
-                       room={roomSolo}
-                   /> 
-                   :
-                   null
-            }
-            </div>
-            ):null}
+        var insiderSearch = window.location.href.replace('http://localhost:3001/pa/', '');
+
+    }
 
     return (
         
@@ -63,9 +48,13 @@ const Rooms = () => {
                                 </div>
                             
                             <select id='select-block' className='select-options-rooms' onChange={selectBlock}>
-                                <option value="E">Bloco E</option>
                                 <option value="B">Bloco B</option>
                                 <option value="C">Bloco C</option>
+                                <option value="D">Bloco D</option>
+                                <option value="E">Bloco E</option>
+                                <option value="F">Bloco F</option>
+                                <option value="G">Bloco G</option>
+                                <option value="H">Bloco H</option>
                             </select>
                         
                         </center>
