@@ -6,6 +6,7 @@ import Login  from './Pages/Login';
 import Rooms  from './Pages/Rooms';
 import Teach  from './Pages/Teach';
 import agenda from './Pages/AgendaPA';
+import MinhaSalas from './Pages/MyRooms';
 
 export default function Routes() {
     return (
@@ -16,6 +17,7 @@ export default function Routes() {
                 <Route path="/rooms" component={Rooms} />
                 <Route path="/teacher" component={Teach} />
                 <Route path="/pa" component={agenda} />
+                <Route path="/my-rooms" component={MinhaSalas} />
             </Switch>
         </BrowserRouter>
     )

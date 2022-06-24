@@ -18,6 +18,19 @@
   text-align-last: center;
 }
 
+.remove-horary{
+  background-color: red;
+  color: white;
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  border-radius: 20px;
+  margin-top: -0.5%;
+}
+
+.remove-horary:hover{
+  background-color: rgb(255, 78, 78);
+}
 
 .icon{
   width: 170px;
@@ -31,10 +44,6 @@ button{
   border-radius: 25px;
   width: auto;
   height: auto;
-}
-
-.click{
-  cursor: pointer;
 }
 
 nav{
@@ -84,10 +93,6 @@ nav{
   padding-right: 50px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-}
-
-.nameRoom:hover{
-  background-color: #ffdf61;
 }
 
 .statusRoom{
