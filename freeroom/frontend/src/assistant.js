@@ -48,3 +48,59 @@ export function roomClick(idSala, room, horary, daysWeek){
       console.log(usage)
       return usage;
 }
+
+export function removeQuote(item){
+    return item.slice(1, item.length - 1); 
+}
+
+export function idRoom(idRoom, room){
+    for(var b in room){
+        if(idRoom === room[b].id){
+            console.log(room[b].id_sala)
+            return room[b].id_sala;
+        }
+    }
+}
+
+export function searchTeacher(horaryTeacher, userID){
+    for(var t in horaryTeacher){
+        if(horaryTeacher.professorId[t] === userID){
+            return horaryTeacher.professorId[t];
+        }
+    }
+}
+
+export function roomVerify(block, idRoom){
+    if((block + "001" === idRoom) ||
+    (block + "002" === (idRoom))||
+    (block + "003" === (idRoom))||
+    (block + "004" === (idRoom))||
+    (block + "005" === (idRoom))||
+    (block + "006" === (idRoom))||
+    (block + "007" === (idRoom))||
+    (block + "101" === (idRoom))||
+    (block + "102" === (idRoom))||
+    (block + "103" === (idRoom))||
+    (block + "104" === (idRoom))||
+    (block + "105" === (idRoom))||
+    (block + "106" === (idRoom))||
+    (block + "107" === (idRoom))){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+export function go(link){
+    window.location.replace(`/${link}`);
+}
+
+export function exitAccount() {
+    var token;
+    localStorage.setItem('user', JSON.stringify(null));
+    localStorage.setItem('IdUser', JSON.stringify(null));
+    localStorage.setItem('nameUser', JSON.stringify(null));
+
+    window.location.replace("/");
+    return token = null;
+}

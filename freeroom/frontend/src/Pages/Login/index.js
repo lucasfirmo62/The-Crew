@@ -1,7 +1,7 @@
-import React, { useEffect, useState, useHistory, useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import '../../Components/Styles/styleslogin.css';
-
 import UTFPRLOGO from '../../Assets/utfpr-logo.png'
+import { removeQuote } from '../../assistant';
 import api from '../../api';
 
 import { AuthContext } from '../../Context/auth';
@@ -9,6 +9,14 @@ import { AuthContext } from '../../Context/auth';
 const Login = () => {
 
     const [user, setUser] = useContext(AuthContext);
+
+    var userVerify = removeQuote(localStorage.getItem('user'));
+
+    console.log(userVerify)
+
+    if(userVerify.length > 10){
+        window.location.replace("/pa");
+    }
 
 
     const [email, setEmail] = useState('');
@@ -28,11 +36,12 @@ const Login = () => {
                 try {
                     const info_data = await api.post('/professor/autenticar', data);
 
-                    localStorage.setItem('user', JSON.stringify(info_data.data.tokenAcesso))
+                    localStorage.setItem('user', JSON.stringify(info_data.data.tokenAcesso));
 
                     setUser({ auth: true })
-
-                    window.location.replace("/pa");
+                    
+                    localStorage.setItem('IdUser', JSON.stringify(info_data.data.usuario.id));
+                    localStorage.setItem('nameUser', JSON.stringify(info_data.data.usuario.nome));
                     
                 } catch (err) {
                     alert('Falha no login, tente novamente.');
@@ -45,15 +54,16 @@ const Login = () => {
     }
 
     return (
-        <>
-            <form id="login-wrapper" onSubmit={handleLogin}>
-                <logo>
-                    <img className='logo-image' src={UTFPRLOGO} alt="" />
-                </logo>
+        <body id="login-wrapper">
+            <img className='logo-image' src={UTFPRLOGO} />
+            <form onSubmit={handleLogin}>
                 <p className='title-app'>Mapeamento de Salas do Campus Campo Mourao</p>
                 <div className='login-box'>
+                    <center>
+                        <p>Acesso do professor</p>
+                    </center>
                     <input
-                        placeholder='Email'
+                        placeholder='ra'
                         id="email"
                         type="text"
                         value={email}
@@ -75,15 +85,13 @@ const Login = () => {
                             type="submit"
                             value={1}
                             onClick={(e) => setLoginOption(e.currentTarget.value)}
-                            className="login-btn"
                         >
                             ENTRAR
                         </button>
                     </div>
                 </div>
             </form>
-            <Footer />
-        </>
+        </body>
     )
 }
 

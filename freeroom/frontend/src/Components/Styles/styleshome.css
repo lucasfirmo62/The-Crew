@@ -1,23 +1,37 @@
 #home-wrapper{
-  height: 1000px;
-  width: 1850px;
-  margin: auto;
+  height: 100%;
+  width: 100%;
+  max-width: 1380px;
   /*background-color: #707070;*/
   background-image: url('../../Components/imagens/i.jpg');
+  background-repeat: no-repeat;
   background-size: cover;
-  background-clip: border-box;
-  padding-top: 15px;
-  padding-right: 500px;
-  padding-left: 500px;
-  padding-bottom: 20px;
+  padding: 100px;
+}
+
+.buttons{
+  width: 100%;
+  height: 500px;
+  background-color: #dfdfdfab;
+  border-radius: 10px;
 }
 
 .buttons-content{
   display: flex;
-  margin-bottom: 20px;
-  text-align-last: center;
+  width: 100%;
+  height: 300px;
+  padding-bottom: 20px;
 }
 
+.header-line{
+  padding-left: 400px;
+  padding-right: 400px;
+  padding-top: 50px;
+}
+
+.logo-image-home{
+  width: 80%;
+}
 
 .icon{
   width: 170px;
@@ -25,26 +39,20 @@
   padding: 10px;
 }
 
-.button{
+.but-crossover{
+  margin: auto;
+}
+
+.buttons-home{
   padding: 5px;
   background-color: white;
   border-radius: 25px;
   margin:  center;
-  margin-left: 20px;
-  margin-right: 25px;
-  width: 170px;
   cursor: pointer;
 }
 
-.button:hover{
+.buttons-home:hover{
   background-color: #dfdfdf;
-}
-
-buton1{
-  margin-left: -100px;
-  margin-right: 500px;
-  width: auto;
-  height: auto;
 }
 
 logo{

@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import './styles.css';
 import {GrClose} from 'react-icons/gr';
-import { daySelect, verifyHorary, usageVerify, roomClick } from '../../assistant';
+import { usageVerify, roomClick } from '../../assistant';
 
 const CardRoom = ({room}) => {
 
@@ -81,7 +81,7 @@ const CardRoom = ({room}) => {
             <div className="list-item">
                 {(horaryTableSolo.horario === usageVerify(horaryTableSolo.horario, usage = roomClick(room.id_sala, room, horary, daysWeek)))?
                    <>
-                   <div className="card-room-horary-self">
+                   <div className="card-room-horary-self-ocuped">
                        <div className="title-room">
                            <p>{horaryTableSolo.horario}</p>
                        </div>

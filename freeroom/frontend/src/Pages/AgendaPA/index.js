@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import '../../Components/Styles/stylespa.css';
 import UTFPRLOGO from '../../Assets/utfpr-logo.png';
-import Footer from '../../Components/Footer2';
-import { daySelect, verifyHorary, usageVerify } from '../../assistant';
+import { daySelect, verifyHorary, usageVerify, removeQuote, go, exitAccount } from '../../assistant';
 import api from '../../api';
 
 
@@ -12,6 +11,13 @@ const Home = () => {
     const [horary, setHorary] = useState([{}]);
     const [tableHorary, setTableHorary] = useState([{}]);
 
+    var userVerify = removeQuote(localStorage.getItem('user'));
+    var userID = parseInt(localStorage.getItem('IdUser'));
+
+    if(userVerify.length < 10){
+        window.location.replace("/login");
+    }
+
     var valueBlock;
     var valueRoom;
     var valueDay;
@@ -19,6 +25,8 @@ const Home = () => {
     var usage = [];
     var insiderDay;
     var textRoom;
+    var roomID;
+    var token;
 
     var insiderSearch = window.location.href.replace('http://localhost:3001/pa/', '');
 
@@ -65,6 +73,12 @@ const Home = () => {
         window.location.replace("http://localhost:3001/pa/" + roomSearch)
     }
 
+    for (var h in room) {
+        if (room[h].id_sala === insiderSearch) {
+            roomID = room[h].id;
+        }
+    }
+
     for (var o in horary) {
         if ((horary[o].salaId === verifyHorary(insiderSearch, room)) && (horary[o].dia_da_semana === insiderDay)) {
             usage.push(horary[o].horario)
@@ -75,19 +89,13 @@ const Home = () => {
         const data = {
             diaReserva: insiderDay,
             hora: id,
-            professorId: 1,
-            salaId: 1
+            professorId: userID,
+            salaId: roomID
         }
 
-        var token = localStorage.getItem('user');
+        token = removeQuote(localStorage.getItem('user'))
 
-        token = token.slice(1, token.length - 1)
-
-        console.log(token)
-
-        console.log(data)
-        
-        api.post('/horario/criar', data, { headers: { "Authorization" : `Bearer ${token}` } })
+        api.post('/horario/criar', data, { headers: { "Authorization": `Bearer ${token}` } })
 
         alert(`${insiderSearch} em ${id} para ${daySelect(insiderDay)} agendado com sucesso`);
 
@@ -102,17 +110,14 @@ const Home = () => {
                     null
                     :
                     <>
-                        <input className='selectCardRoom' type="checkbox" onClick={() => setReservation(horaryTableSolo.horario)} />
-                        <label>
-                            <div className="cardPA">
-                                <div className="nameRoom">
-                                    <p>{horaryTableSolo.horario}</p>
-                                </div>
-                                <div className="statusRoom">
-                                    <p>Livre</p>
-                                </div>
+                        <div className="cardPA" onClick={() => setReservation(horaryTableSolo.horario)}>
+                            <div className="nameRoom">
+                                <p>{horaryTableSolo.horario}</p>
                             </div>
-                        </label>
+                            <div className="statusRoom">
+                                <p>Livre</p>
+                            </div>
+                        </div>
                     </>
                 }
             </div>
@@ -126,11 +131,16 @@ const Home = () => {
             <body>
                 <nav>
                     <div id="pa-wrapper-content">
-                        <logo>
-                            <img className='logo-image' src={UTFPRLOGO} alt="" />
-                        </logo>
-                        <p className='title-app'>Mapeamento de Salas do Campus Campo Mourao</p>
-                        <div className='login-box'>
+                            <img className='logo-image-pa' src={UTFPRLOGO} alt="" />
+                        <p className='title-app'>Mapeamento de Salas do Campus Campo Mourão</p>
+                        <div className='user-info'>
+                            <p>Olá, {removeQuote(localStorage.getItem('nameUser'))}</p>
+                            <p onClick={() => go('rooms')} className='click'>Mapa de salas</p>
+                            <p onClick={() => go('pa')} className='click'>Agendar</p>
+                            <p onClick={() => go('my-rooms')} className='click'>Minhas salas</p>
+                            <exit onClick={token = exitAccount}>Sair</exit>
+                        </div>
+                        <div className='content-rooms-all'>
 
                             <div className='options-pa'>
                                 <div id="test" className='content-option'>
@@ -190,15 +200,11 @@ const Home = () => {
 
                                 <div className='colage'>
 
-                                    <p>{textRoom}</p>
+                                    <p className='text-info-rooms'>{textRoom}</p>
 
                                     <center>
 
                                         <NoUsageHorary />
-
-                                        <button>
-                                            Confirmar
-                                        </button>
 
                                     </center>
 
@@ -210,7 +216,6 @@ const Home = () => {
                     </div>
                 </nav>
             </body>
-            <Footer />
         </>
     )
 }
