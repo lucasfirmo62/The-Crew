@@ -119,6 +119,23 @@
 
 }
 
+.card-room-horary-self-ocuped{
+    
+    width: 250px;
+    height: 70px;
+    max-width: 100%;
+    background-image:
+    linear-gradient(
+      to top, 
+      #ffffff 60%,
+      #ff3535 30%
+      
+    );
+    border: 2px solid #040403;
+    border-radius: 10px;
+
+}
+
 .staus-room-modal{
     text-align-last: center;
     padding-bottom: 5px;
@@ -169,6 +186,23 @@
           to top, 
           #ffffff 60%,
           #91F1E0 30%
+          
+        );
+        border: 2px solid #040403;
+        border-radius: 10px;
+    
+    }
+
+    .card-room-horary-self-ocuped{
+        
+        width: 230px;
+        height: 70px;
+        max-width: 100%;
+        background-image:
+        linear-gradient(
+          to top, 
+          #ffffff 60%,
+          #ff3535 30%
           
         );
         border: 2px solid #040403;
@@ -232,6 +266,23 @@
         border-radius: 10px;
     
     }
+
+    .card-room-horary-self-ocuped{
+        
+        width: 180px;
+        height: 70px;
+        max-width: 100%;
+        background-image:
+        linear-gradient(
+          to top, 
+          #ffffff 60%,
+          #ff3535 30%
+          
+        );
+        border: 2px solid #040403;
+        border-radius: 10px;
+    
+    }
     
     .staus-room-modal{
         text-align-last: center;
@@ -283,6 +334,23 @@
           to top, 
           #ffffff 60%,
           #91F1E0 30%
+          
+        );
+        border: 2px solid #040403;
+        border-radius: 10px;
+    
+    }
+
+    .card-room-horary-self-ocuped{
+        
+        width: 180px;
+        height: 70px;
+        max-width: 100%;
+        background-image:
+        linear-gradient(
+          to top, 
+          #ffffff 60%,
+          #ff3535 30%
           
         );
         border: 2px solid #040403;
@@ -355,6 +423,23 @@
         border-radius: 10px;
     
     }
+
+    .card-room-horary-self-ocuped{
+        
+        width: 180px;
+        height: 70px;
+        max-width: 100%;
+        background-image:
+        linear-gradient(
+          to top, 
+          #ffffff 60%,
+          #ff3535 30%
+          
+        );
+        border: 2px solid #040403;
+        border-radius: 10px;
+    
+    }
     
     .staus-room-modal{
         text-align-last: center;
@@ -415,6 +500,23 @@
           to top, 
           #ffffff 60%,
           #91F1E0 30%
+          
+        );
+        border: 2px solid #040403;
+        border-radius: 10px;
+    
+    }
+
+    .card-room-horary-self-ocuped{
+        
+        width: 180px;
+        height: 70px;
+        max-width: 100%;
+        background-image:
+        linear-gradient(
+          to top, 
+          #ffffff 60%,
+          #ff3535 30%
           
         );
         border: 2px solid #040403;
@@ -488,6 +590,23 @@
         border-radius: 10px;
     
     }
+
+    .card-room-horary-self-ocuped{
+        
+        width: 180px;
+        height: 70px;
+        max-width: 100%;
+        background-image:
+        linear-gradient(
+          to top, 
+          #ffffff 60%,
+          #ff3535 30%
+          
+        );
+        border: 2px solid #040403;
+        border-radius: 10px;
+    
+    }
     
     .staus-room-modal{
         text-align-last: center;
@@ -549,6 +668,23 @@
           to top, 
           #ffffff 60%,
           #91F1E0 30%
+          
+        );
+        border: 2px solid #040403;
+        border-radius: 10px;
+    
+    }
+
+    .card-room-horary-self-ocuped{
+        
+        width: 180px;
+        height: 70px;
+        max-width: 100%;
+        background-image:
+        linear-gradient(
+          to top, 
+          #ffffff 60%,
+          #ff3535 30%
           
         );
         border: 2px solid #040403;
@@ -622,6 +758,23 @@
         border-radius: 10px;
     
     }
+
+    .card-room-horary-self-ocuped{
+        
+        width: 180px;
+        height: 70px;
+        max-width: 100%;
+        background-image:
+        linear-gradient(
+          to top, 
+          #ffffff 60%,
+          #ff3535 30%
+          
+        );
+        border: 2px solid #040403;
+        border-radius: 10px;
+    
+    }
     
     .staus-room-modal{
         text-align-last: center;
@@ -683,6 +836,23 @@
           to top, 
           #ffffff 60%,
           #91F1E0 30%
+          
+        );
+        border: 2px solid #040403;
+        border-radius: 10px;
+    
+    }
+
+    .card-room-horary-self-ocuped{
+        
+        width: 180px;
+        height: 70px;
+        max-width: 100%;
+        background-image:
+        linear-gradient(
+          to top, 
+          #ffffff 60%,
+          #ff3535 30%
           
         );
         border: 2px solid #040403;
@@ -756,6 +926,23 @@
     
     }
     
+    .card-room-horary-self-ocuped{
+        
+        width: 180px;
+        height: 70px;
+        max-width: 100%;
+        background-image:
+        linear-gradient(
+          to top, 
+          #ffffff 60%,
+          #ff3535 30%
+          
+        );
+        border: 2px solid #040403;
+        border-radius: 10px;
+    
+    }
+
     .staus-room-modal{
         text-align-last: center;
         padding-bottom: 5px;
@@ -821,6 +1008,23 @@
     
     }
     
+    .card-room-horary-self-ocuped{
+        
+        width: 200px;
+        height: 70px;
+        max-width: 100%;
+        background-image:
+        linear-gradient(
+          to top, 
+          #ffffff 60%,
+          #ff3535 30%
+          
+        );
+        border: 2px solid #040403;
+        border-radius: 10px;
+    
+    }
+
     .staus-room-modal{
         text-align-last: center;
         padding-bottom: 5px;
