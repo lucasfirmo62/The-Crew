@@ -1,0 +1,7 @@
+node_modules
+myapp
+*.env
+yarn-error.log
+*.json
+*.ico
+
