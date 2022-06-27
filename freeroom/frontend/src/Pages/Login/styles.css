@@ -3,7 +3,7 @@
   height: auto;
   max-width: 1380px;
   margin: auto;
-  background-color: #707070;
+  background-color: #f9e14b;
   padding-top: 20px;
   padding-right: 500px;
   padding-left: 500px;
@@ -36,10 +36,6 @@
   text-align: center;
   padding: 10px;
   font-size: 20px;
-}
-
-.but-crossover{
-  padding: 10px;
 }
 
 button{
@@ -89,7 +85,3 @@ button:hover{
   height: 50px;
 }
 
-logo{
-  display: flex;
-  margin:  center;
-}

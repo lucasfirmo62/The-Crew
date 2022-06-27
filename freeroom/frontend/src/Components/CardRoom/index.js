@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import './styles.css';
 import {GrClose} from 'react-icons/gr';
+import { usageVerify, roomClick } from '../../assistant';
 
 const CardRoom = ({room}) => {
 
@@ -9,6 +10,7 @@ const CardRoom = ({room}) => {
   const [showResults, setShowResults] = React.useState(false)
   const onClick = () => setShowResults(true)
   const exit = () => setShowResults(false)
+  var usage = [];
 
     useEffect(() => {
       const url = `http://localhost:3000/horario/mostrar`;
@@ -46,10 +48,10 @@ const CardRoom = ({room}) => {
   if(tableHorary){
     var h = 0;
       for(var i in horary){
-        if(room.id === horary[h].salaId){
-          if(daysWeek.substr(0, 3) === horary[i].dia_da_semana){
-              for(var j in tableHorary){
-                  if((daysHorary < tableHorary[j].fim) && (daysHorary > tableHorary[j].inicio)){
+        if(room.id === horary[i].salaId){
+          if(daysWeek.substring(0, 3) === horary[i].dia_da_semana){
+            for(var j in tableHorary){
+              if((daysHorary < tableHorary[j].fim) & (daysHorary > tableHorary[j].inicio)){
                       verifyHorary = true;
                       message = "sala ocupada no momento";
                       break;
@@ -74,20 +76,34 @@ const CardRoom = ({room}) => {
           <p>Sala {room.id_sala}</p>
         </div>
         <div className='horarys'>
-          {tableHorary.map((roomHorary, index) => (
+          {
+          (daysWeek) ? tableHorary.map(horaryTableSolo =>
             <div className="list-item">
-              <div id = "test">                 
-              <div className='card-room-horary-self'>
-                  <div className='title-room'>
-                    <p>{roomHorary.horario}</p>
-                  </div>
-                  <div className='.staus-room-modal'>
-                    <p>Livre</p>
-                  </div>
-                </div>
-              </div>
-        </div>
-          ))
+                {(horaryTableSolo.horario === usageVerify(horaryTableSolo.horario, usage = roomClick(room.id_sala, room, horary, daysWeek)))?
+                   <>
+                   <div className="card-room-horary-self-ocuped">
+                       <div className="title-room">
+                           <p>{horaryTableSolo.horario}</p>
+                       </div>
+                       <div className=".staus-room-modal">
+                           <p>Ocupado</p>
+                       </div>
+                   </div>
+               </>
+                    :
+                    <>
+                        <div className="card-room-horary-self">
+                            <div className="title-room">
+                                <p>{horaryTableSolo.horario}</p>
+                            </div>
+                            <div className=".staus-room-modal">
+                                <p>Livre</p>
+                            </div>
+                        </div>
+                    </>
+                }
+            </div>
+        ):null
         }
         </div>
       </div>
@@ -97,8 +113,8 @@ const CardRoom = ({room}) => {
   
     return (
       <>
-        { showResults ? <HoraryRoom /> : null }
       
+        { showResults ? <HoraryRoom /> : null }
       <div onClick={onClick} className='card-room-content'>
         <div className='title-room'>
             <p>Sala {room.id_sala}</p>
